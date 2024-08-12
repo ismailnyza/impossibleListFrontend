@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TodoItem from "./todoitem";
+import TodoItem from "./TodoItem";
 
 export default function AllTodos() {
   const [data, setData] = useState(null);
@@ -22,7 +22,6 @@ export default function AllTodos() {
     fetchData();
   }, []);
 
-  // Render loading or error states
   if (error) {
     return <div>Error: {error.message}</div>;
   }
@@ -32,18 +31,20 @@ export default function AllTodos() {
   }
 
   return (
-    <div>
-      <h1>Data from API</h1>
-      {data.map(
-        (todo) => (
-          console.log(todo),
-          (
-            <div key={todo.id} className="todoItem">
-              <TodoItem todo={todo} />
-            </div>
-          )
-        ),
-      )}
+    <div className="p-8 bg-gray-900 min-h-screen">
+      <h1 className="text-3xl font-bold mb-6 text-gray-100">Today</h1>
+      <div className="mb-4 text-gray-400">
+        <span>{data.length} tasks</span>
+      </div>
+
+      <div className="space-y-6">
+        <div></div>
+        <div className="space-y-2">
+          {data.map((todo) => (
+            <TodoItem key={todo.id} todo={todo} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

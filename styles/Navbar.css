@@ -1,0 +1,33 @@
+/* Navbar.css */
+.navbar {
+    background-color: #2d3748; /* Equivalent to Tailwind's bg-gray-800 */
+    padding: 0px 18px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+}
+
+.navbar-title {
+    font-size: 24px; /* Equivalent to Tailwind's text-2xl */
+    color: white;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Equivalent to Tailwind's space-x-4 */
+}
+
+.navbar-icon {
+    width: 32px; /* Adjust the size as needed */
+    height: 32px; /* Adjust the size as needed */
+    color: white;
+    cursor: pointer;
+}
